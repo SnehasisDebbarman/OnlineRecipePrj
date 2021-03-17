@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OnlineRecipeApp.Models.Recipe>
+
+@{
+    ViewBag.Title = "Rec";
+}
+
+
+<div class="alert alert-danger m-1">
+    We found  @Model.ToArray()[1].size.ToString() results for "@Model.ToArray()[1].CategoryName.ToString()"
+</div>
+
+<table class="table table-borderless">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>  
+        
+        @*<div class="card mb-3 h-25 w-50" >
+            
+            <img class="card-img-top" src="~/imgs/@item.Picture.ToString()" height="340" width="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.RecipeName)</h5>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                <p class="card-text"> @Html.DisplayFor(modelItem => item.CategoryId)<small class="text-muted">@Html.DisplayFor(modelItem => item.Picture)</small></p>
+            </div>
+        </div>*@
+
+        @{ 
+            Html.RenderPartial("_recipe_view", item);
+        }
+    </td>
+
+
+</tr>
+            }
+
+</table>

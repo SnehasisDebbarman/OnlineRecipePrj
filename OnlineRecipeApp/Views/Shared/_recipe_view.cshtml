@@ -1,0 +1,11 @@
+﻿@model OnlineRecipeApp.Models.Recipe
+
+<div class="card mb-3 h-25 w-50">
+
+    <img class="card-img-top" src="~/imgs/@Model.Picture.ToString()" height="340" width="250" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(modelItem => Model.RecipeName)</h5>
+        <p class="card-text">@Html.DisplayFor(modelItem => Model.Description)</p>
+        <p class="card-text"> @Html.DisplayFor(modelItem => Model.CategoryId)<small class="text-muted">@Html.DisplayFor(modelItem => Model.Picture)</small></p>
+    </div>
+</div>

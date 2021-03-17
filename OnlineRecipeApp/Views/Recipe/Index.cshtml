@@ -1,0 +1,21 @@
+﻿@model IEnumerable<OnlineRecipeApp.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Recipes</h2>
+
+<table class="table table-bordered table-striped">
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.CategoryName, "Rec", new { id = item.CategoryId })
+            </td>
+
+        </tr>
+    }
+
+</table>
